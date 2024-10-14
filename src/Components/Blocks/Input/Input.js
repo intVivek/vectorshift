@@ -1,3 +1,5 @@
+import Text from "../Text/Text";
+
 export default function Input({ name, ...props }) {
   return (
     <label>
@@ -6,4 +8,4 @@ export default function Input({ name, ...props }) {
     </label>
   );
 }
-[];
+

@@ -12,6 +12,7 @@ import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 
 import 'reactflow/dist/style.css';
+import NodeBuilder from './Components/NodeBuilder';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +21,7 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  CustomNode: NodeBuilder
 };
 
 const selector = (state) => ({
@@ -45,8 +47,8 @@ export const PipelineUI = () => {
       onConnect
     } = useStore(selector, shallow);
 
-    const getInitNodeData = (nodeID, type) => {
-      let nodeData = { id: nodeID, nodeType: `${type}` };
+    const getInitNodeData = (nodeID, type, blocks) => {
+      let nodeData = { id: nodeID, nodeType: `${type}`, blocks };
       return nodeData;
     }
 
@@ -57,7 +59,9 @@ export const PipelineUI = () => {
           const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
+            console.log(appData)
             const type = appData?.nodeType;
+            const blocks = appData?.blocks;
       
             // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {
@@ -74,7 +78,7 @@ export const PipelineUI = () => {
               id: nodeID,
               type,
               position,
-              data: getInitNodeData(nodeID, type),
+              data: getInitNodeData(nodeID, type, blocks),
             };
       
             addNode(newNode);

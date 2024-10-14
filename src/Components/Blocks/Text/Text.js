@@ -1,4 +1,4 @@
-export default function Text(props) {
-    return <span {...props} />;
+export default function Text({value, ...props}) {
+    return <span {...props} >{value}</span>;
   }
   
