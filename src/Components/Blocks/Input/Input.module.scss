@@ -1,23 +1,25 @@
-.container{
+.container {
     width: max-content;
-    height: max-content;
     position: relative;
 
-    >.name{
+    > .name {
         position: absolute;
         top: 2px;
         left: 17px;
         text-transform: capitalize;
         color: #777c98;
+        transition: all 0.3s ease;
     }
 
-    >.input{
-        display: inline-block;
-        width: 250px;
-        height: 50px;
-        padding-top: 20px;
+    > .input {
+        display: block;
+        width: 250px; 
+        min-height: 50px; 
+        padding-top: 24px;
+        margin: 0px;
         padding-inline: 16px;
-        border: 1px solid #b3b3b3;
+        line-height: 16px;
+        outline: 1px solid #b3b3b3;
         border-radius: 30px;
         font-size: 16px;
         color: #333;
@@ -25,18 +27,23 @@
         box-sizing: border-box;
         box-shadow: none;
         transition: border-color 0.3s ease;
-      
+        resize: none;
+        overflow: hidden;
+
         &:focus {
             outline: 2px solid #7367F0;
         }
 
         &:hover {
             border-color: #5a56c2;
-          }
-        
-        &::placeholder {
-          color: #7367F0;
         }
-      
+
+        &::placeholder {
+            color: #7367F0;
+        }
+    }
+
+    .handle{
+        transform: translate(-19px);
     }
 }
