@@ -23,13 +23,13 @@ export default function Input({
     const foundVariables = [];
     const seenVariableNames = new Set(); 
   
-    lines.map((line, lineIndex) => {
+    lines.forEach((line, lineIndex) => {
       const startIndex = line.indexOf('{{');
       const endIndex = line.indexOf('}}');
-  
+    
       if (startIndex !== -1 && endIndex !== -1) {
         const variableName = line.slice(startIndex + 2, endIndex).trim();
-  
+    
         if (variableName && !seenVariableNames.has(variableName)) {
           seenVariableNames.add(variableName); 
           foundVariables.push({

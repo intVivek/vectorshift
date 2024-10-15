@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Handle, Position } from "reactflow";
 import Text from "./Blocks/Text/Text";
 import Input from "./Blocks/Input/Input";

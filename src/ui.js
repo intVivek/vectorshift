@@ -6,10 +6,6 @@ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
-import { InputNode } from './nodes/inputNode';
-import { LLMNode } from './nodes/llmNode';
-import { OutputNode } from './nodes/outputNode';
-import { TextNode } from './nodes/textNode';
 
 import 'reactflow/dist/style.css';
 import NodeBuilder from './Components/NodeBuilder';
@@ -79,12 +75,14 @@ export const PipelineUI = () => {
             addNode(newNode);
           }
         },
+          // eslint-disable-next-line react-hooks/exhaustive-deps
         [reactFlowInstance]
     );
 
     const onDragOver = useCallback((event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
+          // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
