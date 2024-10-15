@@ -21,3 +21,29 @@ code {
   flex-direction: column;
   height: 100%;
 }
+
+.react-flow .react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #d7d7d700;
+  outline: 1px solid #784be8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #784be8;
+  }
+}
+
+.react-flow__handle-right {
+  right: -7px !important;
+  top: 50%;
+  transform: translate(0, -50%);
+}
