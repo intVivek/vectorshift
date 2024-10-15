@@ -1,18 +1,19 @@
 .toolbarContainer {
-    padding: 16px;
-    box-shadow: 0px 1px 1px 0px #d5d5d5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 16px;
+  box-shadow: 0px 1px 1px 0px #d5d5d5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
   }
-  
-  .toolbarItems {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .submitButton {
-   
-  }
-  
+}
+
+.toolbarItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

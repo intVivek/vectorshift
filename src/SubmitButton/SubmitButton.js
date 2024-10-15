@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import s from "./SubmitButton.module.scss";
 import { FaPlay } from "react-icons/fa";
-import { useStore } from "../../store";
+import { useStore } from "../store";
 import { shallow } from "zustand/shallow";
-import usePipelineSubmission from "../../hooks/usePipelineSubmission";
-import ShowDAGModal from "../ShowDAGModal/ShowDAGModal";
+import usePipelineSubmission from "../hooks/usePipelineSubmission";
+import ShowDAGModal from "../Components/ShowDAGModal/ShowDAGModal";
 
 const selector = (state) => ({
   nodes: state.nodes,

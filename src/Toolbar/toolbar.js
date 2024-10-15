@@ -2,7 +2,7 @@
 
 import s from "./toolbar.module.scss";
 import { DraggableNode } from "../DraggableNode/draggableNode";
-import SubmitButton from "../Components/SubmitButton/SubmitButton";
+import SubmitButton from "../SubmitButton/SubmitButton";
 
 const nodes = [
   {
