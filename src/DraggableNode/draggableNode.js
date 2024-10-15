@@ -1,5 +1,3 @@
-// draggableNode.js
-
 import BlocksIcons from "../Components/Icons";
 import s from './draggableNode.module.scss'
 

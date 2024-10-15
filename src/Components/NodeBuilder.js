@@ -13,7 +13,6 @@ const Blocks = {
 
 export const NodeBuilder = ({ id, data }) => {
 
-  console.log(data)
   const type = data?.type;
   const blocks = data?.blocks || [];
 

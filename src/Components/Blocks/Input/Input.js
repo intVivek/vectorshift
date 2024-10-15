@@ -49,13 +49,6 @@ export default function Input({
     onChange && onChange(e);
   };
   
-  
-  
-  
-
-  useEffect(() => {
-    console.log(handles);
-  }, [handles]);
 
   useEffect(() => {
     if (textareaRef.current) {

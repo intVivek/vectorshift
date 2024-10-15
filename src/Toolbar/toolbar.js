@@ -1,4 +1,3 @@
-// toolbar.js
 
 import s from "./toolbar.module.scss";
 import { DraggableNode } from "../DraggableNode/draggableNode";

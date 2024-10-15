@@ -2,8 +2,6 @@ import { useMutation } from '@tanstack/react-query';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
 
-console.log(process.env.REACT_APP_API_URL);
-
 const submitData = async (pipelineData) => {
   const response = await fetch(`${apiUrl}/pipelines/parse`, {
     method: 'POST',
