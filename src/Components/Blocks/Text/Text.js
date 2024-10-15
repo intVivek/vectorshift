@@ -1,4 +1,4 @@
-export default function Text({value, ...props}) {
-    return <span {...props} >{value}</span>;
+export default function Text({value, children, ...props}) {
+    return <span {...props} >{value || children}</span>;
   }
   

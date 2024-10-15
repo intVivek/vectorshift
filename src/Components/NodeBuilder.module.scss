@@ -1,0 +1,22 @@
+.nodeBuilder{
+    width: max-content;
+    height: max-content;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0 0 2px 3px #9b9be9;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+
+    >.label{
+        color: #777c98;
+        margin-bottom: 16px;
+        font-weight: 500;
+    }
+
+    >.container{
+        width: max-content; height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
