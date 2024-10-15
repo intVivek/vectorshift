@@ -7,11 +7,24 @@
     padding: 16px;
     background: white;
 
-    >.label{
-        color: #777c98;
+    >.heading{
+        display: flex;
+        align-items: center;
+        gap: 4px;
         margin-bottom: 16px;
-        font-weight: 500;
+
+        >.icon{
+            color: #404354;
+        }
+
+        >.label{
+            color: #777c98;
+            padding-bottom: 2px;
+            font-weight: 500;
+        }
     }
+
+
 
     >.container{
         width: max-content; height: max-content;

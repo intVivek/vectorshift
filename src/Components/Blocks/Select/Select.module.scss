@@ -23,6 +23,9 @@
     outline: none;
     box-shadow: none;
     transition: border-color 0.3s ease;
+    -moz-appearance:none; 
+    -webkit-appearance:none; 
+    appearance:none;
 
     &:hover {
       border-color: #5a56c2;
@@ -45,9 +48,13 @@
     }
   }
 
-  > .option {
+  >.option {
     padding: 10px;
     font-size: 16px;
     background-color: white;
+
+    &:hover {
+        background-color: yellow;
+    }
   }
 }

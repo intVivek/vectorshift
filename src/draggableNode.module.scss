@@ -1,0 +1,23 @@
+.draggableNode{
+    min-width: 70px; 
+    width: max-content; height: 70px;
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .icon{
+        width: 20px; height: 20px;
+        color: #404354;
+    }
+
+    .text{
+        text-transform: capitalize;
+        color: #777c98;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
