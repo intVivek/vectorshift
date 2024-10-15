@@ -1,11 +1,13 @@
 // toolbar.js
 
-import { DraggableNode } from "./draggableNode";
+import s from './toolbar.module.scss';
+import { DraggableNode } from "../DraggableNode/draggableNode";
+import SubmitButton from '../Components/SubmitButton/SubmitButton';
 
 const blocks = [
   {
     type: "input",
-    value: "123",
+    value: "Input",
   },
   {
     type: "select",
@@ -19,20 +21,15 @@ const blocks = [
 
 export const PipelineToolbar = () => {
   return (
-    <div style={{ padding: "16px", boxShadow: "0px 1px 1px 0px #d5d5d5" }}>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-        }}
-      >
+    <div className={s.toolbarContainer}>
+      <div className={s.toolbarItems}>
         <DraggableNode type="input" label="Input" />
         <DraggableNode type="llm" label="LLM" />
         <DraggableNode type="output" label="Output" />
         <DraggableNode type="text" label="Text" />
         <DraggableNode type="CustomNode" label="Text" blocks={blocks} />
       </div>
+      <SubmitButton className={s.submitButton} />
     </div>
   );
 };

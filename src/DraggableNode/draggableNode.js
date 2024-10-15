@@ -1,6 +1,6 @@
 // draggableNode.js
 
-import BlocksIcons from "./Components/Icons";
+import BlocksIcons from "../Components/Icons";
 import s from './draggableNode.module.scss'
 
 export const DraggableNode = ({ type, label, blocks}) => {
