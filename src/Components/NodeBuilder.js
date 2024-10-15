@@ -14,14 +14,15 @@ const Blocks = {
 
 export const NodeBuilder = ({ id, data }) => {
 
-  const type = data?.nodeType;
+  console.log(data)
+  const type = data?.type;
   const blocks = data?.blocks || [];
 
   const Icon = BlocksIcons[type] || (() => <></>);
 
   return (
     <div className={s.nodeBuilder}>
-      <div className={s.heading}><Icon className={s.icon}/><span className={s.label}>{type}</span></div>
+      <div className={s.heading}><Icon className={s.icon}/><span className={s.label}>{data?.label}</span></div>
       <div className={s.container}>
         {blocks.map((item, index) => {
           const Block = Blocks[item.type];

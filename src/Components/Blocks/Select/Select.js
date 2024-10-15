@@ -1,10 +1,10 @@
 import s from './Select.module.scss';
 import Text from "../Text/Text";
 
-export default function Select({ type, options = [], ...props }) {
+export default function Select({ type, label, options = [], ...props }) {
   return (
     <div className={s.container}>
-      <Text className={s.name}>{type}</Text>
+      <Text className={s.name}>{label}</Text>
       <select className={s.select} {...props}>
         {options &&
           options.map((item) => (

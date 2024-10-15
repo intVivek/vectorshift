@@ -17,10 +17,6 @@ import NodeBuilder from './Components/NodeBuilder';
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
-  customInput: InputNode,
-  llm: LLMNode,
-  customOutput: OutputNode,
-  text: TextNode,
   CustomNode: NodeBuilder
 };
 
@@ -47,8 +43,8 @@ export const PipelineUI = () => {
       onConnect
     } = useStore(selector, shallow);
 
-    const getInitNodeData = (nodeID, type, blocks) => {
-      let nodeData = { id: nodeID, nodeType: `${type}`, blocks };
+    const getInitNodeData = (nodeID, data) => {
+      let nodeData = { id: nodeID, data };
       return nodeData;
     }
 
@@ -60,8 +56,7 @@ export const PipelineUI = () => {
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
             console.log(appData)
-            const type = appData?.nodeType;
-            const blocks = appData?.blocks;
+            const type = appData?.type;
       
             // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {
@@ -76,9 +71,9 @@ export const PipelineUI = () => {
             const nodeID = getNodeID(type);
             const newNode = {
               id: nodeID,
-              type,
+              type: 'CustomNode',
               position,
-              data: getInitNodeData(nodeID, type, blocks),
+              ...getInitNodeData(nodeID, appData),
             };
       
             addNode(newNode);
