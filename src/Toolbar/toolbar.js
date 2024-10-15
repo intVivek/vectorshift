@@ -124,7 +124,7 @@ export const PipelineToolbar = () => {
       <div className={s.toolbarItems}>
         {nodes &&
           nodes.map(({ id, type, label, blocks }) => (
-            <DraggableNode id={id} type={type} label={label} blocks={blocks} />
+            <DraggableNode key={id} id={id} type={type} label={label} blocks={blocks} />
           ))}
       </div>
       <SubmitButton className={s.submitButton} />
