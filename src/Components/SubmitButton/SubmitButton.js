@@ -39,7 +39,7 @@ const SubmitButton = () => {
   return (
     <>
       <button className={s.SubmitButton} onClick={handleSubmit}>
-        {mutation.isLoading ? (
+        {mutation.isPending ? (
           <div className={s.spinner}></div>
         ) : (
           <>
